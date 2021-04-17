@@ -8,7 +8,7 @@ const Form = ({setInputText,todos,setTodos,inputText, setStatus}) => {
     };
     const submitTodoHandler = (e) => {
       e.preventDefault();
-      if(inputText){
+      if(inputText.trim()){
       setTodos([
         ...todos, {text: inputText, completed: false, id: Math.random() * 1000}
       ]);
@@ -19,7 +19,7 @@ const Form = ({setInputText,todos,setTodos,inputText, setStatus}) => {
     }
     return(
         <form>
-      <input value={inputText} onChange={inputTextHandler} type="text" classNameName="todo-input" />
+      <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
       <button onClick={submitTodoHandler} className="todo-button" type="submit">
         <i className="fas fa-plus-square"></i>
       </button>
